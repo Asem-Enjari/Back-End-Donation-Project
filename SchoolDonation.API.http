@@ -1,0 +1,26 @@
+@SchoolDonation.API_HostAddress = http://localhost:5248
+GET http://localhost:5248/api/Schools
+Accept: application/json
+
+###
+@host = http://localhost:5248
+
+### 1. Register a Secure Manager
+POST {{host}}/api/Auth/Register
+Content-Type: application/json
+
+{
+  "firstName": "Secure",
+  "lastName": "Manager",
+  "email": "secure22@admin.com",
+  "password": "Password123!",
+  "phoneNumber": "099999999",
+  "userRole": "Manager"
+}
+### 1. Get Dashboard Numbers (Top Cards)
+GET {{host}}/api/Home/Statistics
+Accept: application/json
+
+### 2. Get Project Cards (The List)
+GET {{host}}/api/Home/LatestProjects
+Accept: application/json
